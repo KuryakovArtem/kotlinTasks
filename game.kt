@@ -16,7 +16,6 @@ val outWordListFile: String = "Out.txt"
 fun main()
 {
     runBlocking {
-        // we could have done something in parallel with reading from a file, but there is nothing to do =)
         val wordSet: HashSet<String> = (CoroutineScope(Dispatchers.IO).async {
             val wordList: HashSet<String> = HashSet()
             FileReader(wordListFile).use { fileReader ->
